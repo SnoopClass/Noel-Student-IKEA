@@ -11,7 +11,15 @@ class SearchViewController: UIViewController {
 
     // MARK: - property
 
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     
+    private lazy var stackView: UIStackView = {
+        $0.axis = .vertical
+        $0.distribution = .equalSpacing
+        $0.spacing = 0.0
+        return $0
+    }(UIStackView())
 
     // MARK: - life cycle
 
