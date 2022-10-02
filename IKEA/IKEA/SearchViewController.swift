@@ -17,9 +17,20 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupAttributes()
     }
 
     // MARK: - func
+
+    func setupAttributes() {
+        view.backgroundColor = .systemBackground
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.title = "검색"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
 }
