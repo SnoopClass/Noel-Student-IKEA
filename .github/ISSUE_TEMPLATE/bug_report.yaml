@@ -1,8 +1,7 @@
-name: Bug report
-about: Create a report to help us improve
+ame: bug_report
+description: 버그 발생 및 발견 시 제보하는 템플릿
 title: "[Bug] 버그 이슈 제목"
-labels: ["BUG"]
-assignees: "Noel🎸"
+labels: ["🐞BUG"]
 
 body:
   - type: input
