@@ -82,7 +82,7 @@ class TabBarController: UITabBarController {
             wishlistViewController,
             cartViewController
         ]
-        tabBar.isTranslucent = false
+        self.tabBar.isTranslucent = false
         self.tabBar.tintColor = UIColor(named: "selectTabBarItem")
         self.tabBar.unselectedItemTintColor = .systemGray2
     }
