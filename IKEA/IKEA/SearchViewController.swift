@@ -13,7 +13,7 @@ class SearchViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.backgroundColor = UIColor.red.cgColor
+        $0.layer.backgroundColor = UIColor.black.cgColor
         return $0
     }(UIScrollView())
 
@@ -21,13 +21,49 @@ class SearchViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIView())
-    
+
     private lazy var stackView: UIStackView = {
         $0.axis = .vertical
         $0.distribution = .equalSpacing
         $0.spacing = 0.0
+        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIStackView())
+
+    let serachBarSectionView: UIView = {
+        $0.backgroundColor = .red
+        return $0
+    }(UIView())
+
+    let recentProductSectionView: UIView = {
+        $0.backgroundColor = .yellow
+        return $0
+    }(UIView())
+
+    let categorySectionView: UIView = {
+        $0.backgroundColor = .orange
+        return $0
+    }(UIView())
+
+    let campaignSectionView: UIView = {
+        $0.backgroundColor = .green
+        return $0
+    }(UIView())
+
+    let popularProductSectionVie: UIView = {
+        $0.backgroundColor = .blue
+        return $0
+    }(UIView())
+
+    let loginSectionView: UIView = {
+        $0.backgroundColor = .purple
+        return $0
+    }(UIView())
+
+    let informationSectionView: UIView = {
+        $0.backgroundColor = .systemPink
+        return $0
+    }(UIView())
 
     // MARK: - life cycle
 
@@ -43,8 +79,13 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupNavigationBar()
     }
-    
+
     func setupLayout() {
+        setupscrollView()
+        setupstackView()
+    }
+
+    func setupscrollView(){
         view.addSubview(scrollView)
         let scrollViewConstraint = [
             scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
@@ -74,6 +115,29 @@ class SearchViewController: UIViewController {
             contentViewCenterY,
             contentViewHeight
         ])
+    }
+
+    func setupstackView() {
+        contentView.addSubview(stackView)
+        let stackViewConstraint = [
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(stackViewConstraint)
+        [
+            serachBarSectionView,
+            recentProductSectionView,
+            categorySectionView,
+            categorySectionView,
+            popularProductSectionVie,
+            loginSectionView,
+            informationSectionView
+        ].forEach {
+            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            self.stackView.addArrangedSubview($0)
+        }
     }
 
     func setupNavigationBar() {
