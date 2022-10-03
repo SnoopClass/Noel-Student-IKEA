@@ -30,10 +30,9 @@ class SearchViewController: UIViewController {
         return $0
     }(UIStackView())
 
-    private let searchBarSectionView: UIView = {
-        $0.backgroundColor = .red
+    private let searchBarSectionView: SearchBarSectionView = {
         return $0
-    }(UIView())
+    }(SearchBarSectionView())
 
     private let recentProductSectionView: UIView = {
         $0.backgroundColor = .yellow
@@ -77,7 +76,6 @@ class SearchViewController: UIViewController {
 
     func setupAttributes() {
         view.backgroundColor = .systemBackground
-        setupNavigationBar()
     }
 
     func setupLayout() {
@@ -138,12 +136,6 @@ class SearchViewController: UIViewController {
             $0.heightAnchor.constraint(equalToConstant: 500).isActive = true
             self.stackView.addArrangedSubview($0)
         }
-    }
-
-    func setupNavigationBar() {
-        navigationItem.title = "검색"
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
 }
