@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         return $0
     }(UIStackView())
 
-    let serachBarSectionView: UIView = {
+    let searchBarSectionView: UIView = {
         $0.backgroundColor = .red
         return $0
     }(UIView())
@@ -127,7 +127,7 @@ class SearchViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(stackViewConstraint)
         [
-            serachBarSectionView,
+            searchBarSectionView,
             recentProductSectionView,
             categorySectionView,
             categorySectionView,
