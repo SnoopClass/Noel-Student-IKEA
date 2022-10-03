@@ -75,12 +75,12 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBar() {
-        self.viewControllers =
-        [mainViewController,
-         searchViewController,
-         userInfoViewController,
-         wishlistViewController,
-         cartViewController
+        self.viewControllers = [
+            mainViewController,
+            searchViewController,
+            userInfoViewController,
+            wishlistViewController,
+            cartViewController
         ]
         tabBar.isTranslucent = false
         self.tabBar.tintColor = UIColor(named: "selectTabBarItem")
