@@ -8,28 +8,42 @@
 import UIKit
 
 class SearchBarSectionView: UIView {
-    
+
     // MARK: - Property
+
     private let titleLable: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "검색"
         $0.font = UIFont.boldSystemFont(ofSize: 22)
-        $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }( UILabel())
 
-    let searchBarTextField: UITextField = {
+    private let searchBarbackground: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.placeholder = "무엇을 찾고 있나요?"
-        $0.frame = CGRect(x: 0, y: 0, width: 0, height: 100)
-        $0.addLeftPadding()
         $0.layer.borderColor = UIColor.label.cgColor
         $0.layer.borderWidth = 1
         $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 25
         return $0
-    }(UITextField())
+    }(UIView())
+
+    private let searchBarIcon: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(systemName: "magnifyingglass")
+        $0.tintColor = .systemGray
+        return $0
+    }(UIImageView())
+
+    private let searchBarPlaceholder: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.text = "무엇을 찾고 있나요?"
+        $0.textColor = .systemGray2
+        return $0
+    }(UILabel())
 
     // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .red
@@ -41,6 +55,7 @@ class SearchBarSectionView: UIView {
     }
 
     // MARK: - Method
+
     func setupLayout() {
         setupTitle()
         setupSearchBar()
@@ -48,39 +63,34 @@ class SearchBarSectionView: UIView {
 
     func setupTitle() {
         self.addSubview(titleLable)
-        let titleLableConstraint = [
+        NSLayoutConstraint.activate([
             titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
-        ]
-        NSLayoutConstraint.activate(titleLableConstraint)
+        ])
     }
 
     func setupSearchBar() {
-        self.addSubview(searchBarTextField)
-        let searchBarTextFieldConstraint = [
-            searchBarTextField.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 30),
-            searchBarTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            searchBarTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            searchBarTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        ]
-        NSLayoutConstraint.activate(searchBarTextFieldConstraint)
-        searchBarTextField.addleftimage(image: UIImage(systemName: "magnifyingglass")!)
-    }
-    
-}
+        self.addSubview(searchBarbackground)
+        NSLayoutConstraint.activate([
+            searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),
+            searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            searchBarbackground.heightAnchor.constraint(equalToConstant: 50)
+        ])
 
-extension UITextField {
-    func addLeftPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.frame.height))
-        self.leftView = paddingView
-        self.leftViewMode = ViewMode.always
-    }
-    
-    func addleftimage(image:UIImage) {
-        let leftimage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        leftimage.image = image
-        leftimage.tintColor = .systemGray
-        self.leftView = leftimage
-        self.leftViewMode = .always
+        searchBarbackground.addSubview(searchBarIcon)
+        NSLayoutConstraint.activate([
+            searchBarIcon.centerYAnchor.constraint(equalTo: searchBarbackground.centerYAnchor),
+            searchBarIcon.leadingAnchor.constraint(equalTo: searchBarbackground.leadingAnchor, constant: 20),
+            searchBarIcon.heightAnchor.constraint(equalToConstant: 20),
+            searchBarIcon.widthAnchor.constraint(equalToConstant: 20)
+        ])
+
+        searchBarbackground.addSubview(searchBarPlaceholder)
+        NSLayoutConstraint.activate([
+            searchBarPlaceholder.centerYAnchor.constraint(equalTo: searchBarbackground.centerYAnchor),
+            searchBarPlaceholder.leadingAnchor.constraint(equalTo: searchBarIcon.trailingAnchor, constant: 10)
+        ])
+
     }
 }
