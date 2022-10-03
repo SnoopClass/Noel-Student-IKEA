@@ -135,7 +135,7 @@ class SearchViewController: UIViewController {
             loginSectionView,
             informationSectionView
         ].forEach {
-            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 500).isActive = true
             self.stackView.addArrangedSubview($0)
         }
     }
