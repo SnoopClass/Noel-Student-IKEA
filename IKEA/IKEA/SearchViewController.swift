@@ -132,5 +132,4 @@ class SearchViewController: UIViewController {
             self.stackView.addArrangedSubview($0)
         }
     }
-
 }
