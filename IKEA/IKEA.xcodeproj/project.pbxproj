@@ -16,6 +16,7 @@
 		7B082E1828E965C2002C0F45 /* IKEAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B082E1728E965C2002C0F45 /* IKEAUITests.swift */; };
 		7B082E1A28E965C2002C0F45 /* IKEAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B082E1928E965C2002C0F45 /* IKEAUITestsLaunchTests.swift */; };
 		7B082E2928E9B86B002C0F45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B082E2828E9B86B002C0F45 /* SearchViewController.swift */; };
+		7B082E2F28EAD2DC002C0F45 /* SearchBarSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B082E2E28EAD2DC002C0F45 /* SearchBarSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7B082E1728E965C2002C0F45 /* IKEAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKEAUITests.swift; sourceTree = "<group>"; };
 		7B082E1928E965C2002C0F45 /* IKEAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKEAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7B082E2828E9B86B002C0F45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7B082E2E28EAD2DC002C0F45 /* SearchBarSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7B082DF828E965C1002C0F45 /* SceneDelegate.swift */,
 				7B082DFA28E965C1002C0F45 /* ViewController.swift */,
 				7B082E2828E9B86B002C0F45 /* SearchViewController.swift */,
+				7B082E2D28EAD295002C0F45 /* SupportingView */,
 				7B082DFF28E965C1002C0F45 /* Assets.xcassets */,
 				7B082E0128E965C1002C0F45 /* LaunchScreen.storyboard */,
 				7B082E0428E965C1002C0F45 /* Info.plist */,
@@ -125,6 +128,14 @@
 				7B082E1928E965C2002C0F45 /* IKEAUITestsLaunchTests.swift */,
 			);
 			path = IKEAUITests;
+			sourceTree = "<group>";
+		};
+		7B082E2D28EAD295002C0F45 /* SupportingView */ = {
+			isa = PBXGroup;
+			children = (
+				7B082E2E28EAD2DC002C0F45 /* SearchBarSectionView.swift */,
+			);
+			path = SupportingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B082DFB28E965C1002C0F45 /* ViewController.swift in Sources */,
+				7B082E2F28EAD2DC002C0F45 /* SearchBarSectionView.swift in Sources */,
 				7B082DF728E965C1002C0F45 /* AppDelegate.swift in Sources */,
 				7B082E2928E9B86B002C0F45 /* SearchViewController.swift in Sources */,
 				7B082DF928E965C1002C0F45 /* SceneDelegate.swift in Sources */,

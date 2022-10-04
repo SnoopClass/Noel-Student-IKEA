@@ -30,10 +30,9 @@ class SearchViewController: UIViewController {
         return $0
     }(UIStackView())
 
-    private let searchBarSectionView: UIView = {
-        $0.backgroundColor = .red
+    private let searchBarSectionView: SearchBarSectionView = {
         return $0
-    }(UIView())
+    }(SearchBarSectionView())
 
     private let recentProductSectionView: UIView = {
         $0.backgroundColor = .yellow
@@ -77,7 +76,6 @@ class SearchViewController: UIViewController {
 
     private func setupAttributes() {
         view.backgroundColor = .systemBackground
-        setupNavigationBar()
     }
 
     private func setupLayout() {
@@ -87,23 +85,15 @@ class SearchViewController: UIViewController {
 
     private func setupscrollView(){
         view.addSubview(scrollView)
-        let scrollViewConstraint = [
+        NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(scrollViewConstraint)
+        ])
 
         scrollView.addSubview(contentView)
-        let contentViewConstraint = [
-            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(contentViewConstraint)
-
+        
         let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
         contentViewCenterY.priority = .defaultLow
 
@@ -111,6 +101,10 @@ class SearchViewController: UIViewController {
         contentViewHeight.priority = .defaultLow
 
         NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentViewCenterY,
             contentViewHeight
@@ -119,13 +113,12 @@ class SearchViewController: UIViewController {
 
     private func setupstackView() {
         contentView.addSubview(stackView)
-        let stackViewConstraint = [
+        NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(stackViewConstraint)
+        ])
         [
             searchBarSectionView,
             recentProductSectionView,
@@ -139,11 +132,4 @@ class SearchViewController: UIViewController {
             self.stackView.addArrangedSubview($0)
         }
     }
-
-    private func setupNavigationBar() {
-        navigationItem.title = "검색"
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
 }
