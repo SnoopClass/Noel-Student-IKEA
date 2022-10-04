@@ -56,12 +56,12 @@ class SearchBarSectionView: UIView {
 
     // MARK: - Method
 
-    func setupLayout() {
+    private func setupLayout() {
         setupTitle()
         setupSearchBar()
     }
 
-    func setupTitle() {
+    private func setupTitle() {
         self.addSubview(titleLable)
         NSLayoutConstraint.activate([
             titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
@@ -69,7 +69,7 @@ class SearchBarSectionView: UIView {
         ])
     }
 
-    func setupSearchBar() {
+    private func setupSearchBar() {
         self.addSubview(searchBarbackground)
         NSLayoutConstraint.activate([
             searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),

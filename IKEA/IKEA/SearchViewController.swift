@@ -74,16 +74,16 @@ class SearchViewController: UIViewController {
 
     // MARK: - func
 
-    func setupAttributes() {
+    private func setupAttributes() {
         view.backgroundColor = .systemBackground
     }
 
-    func setupLayout() {
+    private func setupLayout() {
         setupscrollView()
         setupstackView()
     }
 
-    func setupscrollView(){
+    private func setupscrollView(){
         view.addSubview(scrollView)
         let scrollViewConstraint = [
             scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
@@ -115,7 +115,7 @@ class SearchViewController: UIViewController {
         ])
     }
 
-    func setupstackView() {
+    private func setupstackView() {
         contentView.addSubview(stackView)
         let stackViewConstraint = [
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
