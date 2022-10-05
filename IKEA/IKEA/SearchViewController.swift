@@ -30,36 +30,36 @@ class SearchViewController: UIViewController {
         return $0
     }(UIStackView())
 
-    private let searchBarSectionView: SearchBarSectionView = {
+    private lazy var searchBarSectionView: SearchBarSectionView = {
         return $0
     }(SearchBarSectionView())
 
-    private let recentProductSectionView: UIView = {
+    private lazy var recentProductSectionView: UIView = {
         $0.backgroundColor = .yellow
         return $0
     }(UIView())
 
-    private let categorySectionView: UIView = {
+    private lazy var categorySectionView: UIView = {
         $0.backgroundColor = .orange
         return $0
     }(UIView())
 
-    private let campaignSectionView: UIView = {
+    private lazy var campaignSectionView: UIView = {
         $0.backgroundColor = .green
         return $0
     }(UIView())
 
-    private let popularProductSectionVie: UIView = {
+    private lazy var popularProductSectionVie: UIView = {
         $0.backgroundColor = .blue
         return $0
     }(UIView())
 
-    private let loginSectionView: UIView = {
+    private lazy var loginSectionView: UIView = {
         $0.backgroundColor = .purple
         return $0
     }(UIView())
 
-    private let informationSectionView: UIView = {
+    private lazy var informationSectionView: UIView = {
         $0.backgroundColor = .systemPink
         return $0
     }(UIView())
