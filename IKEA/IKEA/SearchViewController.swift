@@ -23,10 +23,13 @@ class SearchViewController: UIViewController {
     }(UIView())
 
     private lazy var stackView: UIStackView = {
+        $0.backgroundColor = .systemBackground
         $0.axis = .vertical
         $0.distribution = .equalSpacing
         $0.spacing = 0.0
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isLayoutMarginsRelativeArrangement = true
+        $0.layoutMargins = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 0.0, right: 30.0)
         return $0
     }(UIStackView())
 
@@ -128,6 +131,7 @@ class SearchViewController: UIViewController {
             loginSectionView,
             informationSectionView
         ].forEach {
+            $0.heightAnchor.constraint(equalToConstant: $0.frame.size.height).isActive = true
             self.stackView.addArrangedSubview($0)
         }
     }

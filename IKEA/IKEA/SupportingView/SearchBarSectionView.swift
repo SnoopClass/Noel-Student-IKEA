@@ -15,6 +15,7 @@ class SearchBarSectionView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "검색"
         $0.font = UIFont.boldSystemFont(ofSize: 22)
+
         return $0
     }( UILabel())
 
@@ -64,8 +65,8 @@ class SearchBarSectionView: UIView {
     private func setupTitle() {
         self.addSubview(titleLable)
         NSLayoutConstraint.activate([
-            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
-            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
+            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0)
         ])
     }
 
@@ -73,8 +74,8 @@ class SearchBarSectionView: UIView {
         self.addSubview(searchBarbackground)
         NSLayoutConstraint.activate([
             searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),
-            searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  0),
             searchBarbackground.heightAnchor.constraint(equalToConstant: 50)
         ])
 
