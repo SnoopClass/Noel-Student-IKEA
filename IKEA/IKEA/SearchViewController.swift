@@ -26,10 +26,10 @@ class SearchViewController: UIViewController {
         $0.backgroundColor = .systemBackground
         $0.axis = .vertical
         $0.distribution = .equalSpacing
-        $0.spacing = 0.0
+        $0.spacing = 150.0
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.isLayoutMarginsRelativeArrangement = true
-        $0.layoutMargins = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 0.0, right: 30.0)
+        $0.layoutMargins = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 0.0, right: 0.0)
         return $0
     }(UIStackView())
 
@@ -38,9 +38,10 @@ class SearchViewController: UIViewController {
     }(SearchBarSectionView())
 
     private lazy var recentProductSectionView: RecentProductSectionView = {
-        $0.backgroundColor = .yellow
+//        $0.backgroundColor = .yellow
+//        $0.heightAnchor.constraint(equalToConstant: 100).isActive = true
         return $0
-    }(RecentProductSectionView())
+    }(RecentProductSectionView(frame: .zero))
 
     private lazy var categorySectionView: UIView = {
         $0.backgroundColor = .orange
@@ -131,7 +132,7 @@ class SearchViewController: UIViewController {
             loginSectionView,
             informationSectionView
         ].forEach {
-            $0.heightAnchor.constraint(equalToConstant: $0.frame.size.height).isActive = true
+//            $0.heightAnchor.constraint(equalToConstant: $0.frame.size.height).isActive = true
             self.stackView.addArrangedSubview($0)
         }
     }

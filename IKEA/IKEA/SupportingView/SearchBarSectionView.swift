@@ -22,7 +22,7 @@ class SearchBarSectionView: UIView {
     private let searchBarbackground: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderColor = UIColor.label.cgColor
-        $0.layer.borderWidth = 1
+        $0.layer.borderWidth = 0.5
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
         return $0
@@ -75,7 +75,7 @@ class SearchBarSectionView: UIView {
         NSLayoutConstraint.activate([
             searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),
             searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  0),
+            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30),
             searchBarbackground.heightAnchor.constraint(equalToConstant: 50)
         ])
 
