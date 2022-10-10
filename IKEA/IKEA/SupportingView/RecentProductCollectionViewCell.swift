@@ -8,9 +8,9 @@
 import UIKit
 
 class RecentProductCollectionViewCell: UICollectionViewCell {
-    
+
     static let identifier = "RecentProductCollectionViewCell"
-    
+
     // MARK: - Property
     private lazy var productImage: UIImageView = {
         $0.image = UIImage(named: "RecentProductTestImage")
@@ -18,8 +18,7 @@ class RecentProductCollectionViewCell: UICollectionViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIImageView())
-    
-    
+
     // MARK: - Init
 
     override init(frame: CGRect) {

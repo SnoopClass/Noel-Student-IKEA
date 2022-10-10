@@ -36,8 +36,6 @@ class SearchViewController: UIViewController {
     }(SearchBarSectionView())
 
     private lazy var recentProductSectionView: RecentProductSectionView = {
-//        $0.backgroundColor = .yellow
-//        $0.heightAnchor.constraint(equalToConstant: 100).isActive = true
         return $0
     }(RecentProductSectionView(frame: .zero))
 
@@ -130,7 +128,6 @@ class SearchViewController: UIViewController {
             loginSectionView,
             informationSectionView
         ].forEach {
-//            $0.heightAnchor.constraint(equalToConstant: $0.frame.size.height).isActive = true
             self.stackView.addArrangedSubview($0)
         }
     }

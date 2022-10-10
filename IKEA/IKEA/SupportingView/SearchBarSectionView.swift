@@ -8,14 +8,14 @@
 import UIKit
 
 class SearchBarSectionView: UIView {
-
+    
     // MARK: - Property
-
+    
     private let titleLable: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "검색"
         $0.font = UIFont.boldSystemFont(ofSize: 22)
-
+        
         return $0
     }( UILabel())
 
@@ -44,7 +44,7 @@ class SearchBarSectionView: UIView {
     }(UILabel())
 
     // MARK: - Init
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .red
