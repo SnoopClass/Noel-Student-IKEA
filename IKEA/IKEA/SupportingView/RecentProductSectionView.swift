@@ -64,12 +64,12 @@ class RecentProductSectionView: UIView {
         ].forEach{ self.addSubview($0) }
         
         NSLayoutConstraint.activate([
-            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0)
+            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
         ])
         
         NSLayoutConstraint.activate([
-            deleteLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            deleteLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             deleteLable.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30)
         ])
         

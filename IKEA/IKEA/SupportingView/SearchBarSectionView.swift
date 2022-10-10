@@ -65,8 +65,8 @@ class SearchBarSectionView: UIView {
     private func setupTitle() {
         self.addSubview(titleLable)
         NSLayoutConstraint.activate([
-            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0)
+            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
         ])
     }
 
@@ -74,7 +74,7 @@ class SearchBarSectionView: UIView {
         self.addSubview(searchBarbackground)
         NSLayoutConstraint.activate([
             searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),
-            searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30),
             searchBarbackground.heightAnchor.constraint(equalToConstant: 50)
         ])

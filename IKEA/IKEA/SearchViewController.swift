@@ -28,8 +28,6 @@ class SearchViewController: UIViewController {
         $0.distribution = .equalSpacing
         $0.spacing = 150.0
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.isLayoutMarginsRelativeArrangement = true
-        $0.layoutMargins = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 0.0, right: 0.0)
         return $0
     }(UIStackView())
 
