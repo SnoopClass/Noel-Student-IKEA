@@ -11,15 +11,15 @@ class RecentProductSectionView: UIView {
 
     // MARK: - Property
 
-    private let titleLable: UILabel = {
+    private let titleLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "최근 본 제픔"
+        $0.text = "최근 본 제품"
         $0.textColor = .label
         $0.font = UIFont.boldSystemFont(ofSize: 16)
         return $0
     }( UILabel())
 
-    private let deleteLable: UILabel = {
+    private let deleteLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "모두 삭제"
         $0.textColor = .systemGray
@@ -58,23 +58,23 @@ class RecentProductSectionView: UIView {
     // MARK: - Method
     func setupLayout() {
         [
-            titleLable,
-            deleteLable,
+            titleLabel,
+            deleteLabel,
             RecentProductCollectView
         ].forEach{ self.addSubview($0) }
 
         NSLayoutConstraint.activate([
-            titleLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
-            titleLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
         ])
 
         NSLayoutConstraint.activate([
-            deleteLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
-            deleteLable.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30)
+            deleteLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            deleteLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30)
         ])
 
         NSLayoutConstraint.activate([
-            RecentProductCollectView.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 35),
+            RecentProductCollectView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
             RecentProductCollectView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             RecentProductCollectView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  0),
             RecentProductCollectView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),

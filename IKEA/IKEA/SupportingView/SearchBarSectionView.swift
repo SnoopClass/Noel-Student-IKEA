@@ -75,7 +75,7 @@ class SearchBarSectionView: UIView {
         NSLayoutConstraint.activate([
             searchBarbackground.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 25),
             searchBarbackground.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -30),
+            searchBarbackground.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             searchBarbackground.heightAnchor.constraint(equalToConstant: 50)
         ])
 
