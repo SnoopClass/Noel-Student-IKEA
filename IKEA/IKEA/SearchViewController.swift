@@ -23,46 +23,34 @@ class SearchViewController: UIViewController {
     }(UIView())
 
     private lazy var stackView: UIStackView = {
-        $0.backgroundColor = .systemBackground
-        $0.axis = .vertical
-        $0.distribution = .equalSpacing
-        $0.spacing = 150.0
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(UIStackView())
+        let stackView = UIStackView()
+        stackView.backgroundColor = .systemBackground
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 150.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
-    private lazy var searchBarSectionView: SearchBarSectionView = {
-        return $0
-    }(SearchBarSectionView())
+        let searchBarSectionView = SearchBarSectionView()
+        let recentProductSectionView = RecentProductSectionView(frame: .zero)
+        let categorySectionView = UIView()
+        let campaignSectionView = UIView()
+        let popularProductSectionVie = UIView()
+        let loginSectionView = UIView()
+        let informationSectionView = UIView()
 
-    private lazy var recentProductSectionView: RecentProductSectionView = {
-        return $0
-    }(RecentProductSectionView(frame: .zero))
-
-    private lazy var categorySectionView: UIView = {
-        $0.backgroundColor = .orange
-        return $0
-    }(UIView())
-
-    private lazy var campaignSectionView: UIView = {
-        $0.backgroundColor = .green
-        return $0
-    }(UIView())
-
-    private lazy var popularProductSectionVie: UIView = {
-        $0.backgroundColor = .blue
-        return $0
-    }(UIView())
-
-    private lazy var loginSectionView: UIView = {
-        $0.backgroundColor = .purple
-        return $0
-    }(UIView())
-
-    private lazy var informationSectionView: UIView = {
-        $0.backgroundColor = .systemPink
-        return $0
-    }(UIView())
+        [
+            searchBarSectionView,
+            recentProductSectionView,
+            categorySectionView,
+            campaignSectionView,
+            popularProductSectionVie,
+            loginSectionView,
+            informationSectionView
+        ].forEach {
+            stackView.addArrangedSubview($0)
+        }
+        return stackView
+    }()
 
     // MARK: - life cycle
 
@@ -93,7 +81,7 @@ class SearchViewController: UIViewController {
         ])
 
         scrollView.addSubview(contentView)
-        
+
         let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
         contentViewCenterY.priority = .defaultLow
 
@@ -119,16 +107,5 @@ class SearchViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        [
-            searchBarSectionView,
-            recentProductSectionView,
-            categorySectionView,
-            categorySectionView,
-            popularProductSectionVie,
-            loginSectionView,
-            informationSectionView
-        ].forEach {
-            self.stackView.addArrangedSubview($0)
-        }
     }
 }
