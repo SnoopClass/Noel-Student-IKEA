@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
         return $0
     }(UIView())
 
-    private lazy var stackView: UIStackView = {
+    private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.backgroundColor = .systemBackground
         stackView.axis = .vertical
