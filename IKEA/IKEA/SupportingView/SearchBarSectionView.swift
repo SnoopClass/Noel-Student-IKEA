@@ -8,20 +8,21 @@
 import UIKit
 
 class SearchBarSectionView: UIView {
-
+    
     // MARK: - Property
-
+    
     private let titleLable: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "검색"
         $0.font = UIFont.boldSystemFont(ofSize: 22)
+        
         return $0
     }( UILabel())
 
     private let searchBarbackground: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderColor = UIColor.label.cgColor
-        $0.layer.borderWidth = 1
+        $0.layer.borderWidth = 0.5
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
         return $0
@@ -43,7 +44,7 @@ class SearchBarSectionView: UIView {
     }(UILabel())
 
     // MARK: - Init
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .red
